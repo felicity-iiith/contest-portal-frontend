@@ -4,7 +4,7 @@ window.fetchWithAuth = (url, options = {}) => {
   if (body && typeof body.getAll !== 'function') { // is not formdata
     body = new FormData();
     for ( var key in options.body ) {
-        body.append(key, options.body[key]);
+      body.append(key, options.body[key]);
     }
   }
   return fetch(url, {

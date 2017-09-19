@@ -19,11 +19,11 @@ class QuestionsList extends Component {
     const { loading, questions, error } = this.state
     return (
       <div>
-      {!window.email ?
-        <ul></ul>
-        :
-        <ul className="navigation-title " to="/"><h3 className="float-right">Hello {window.email}</h3></ul>
-      }
+        {!window.email ?
+          <ul></ul>
+          :
+          <ul className="navigation-title " to="/"><h3 className="float-right">Hello {window.email}</h3></ul>
+        }
         <h1>Questions</h1>
         {loading && <div>Loading...</div>}
         <ul>

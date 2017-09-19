@@ -3,4 +3,6 @@ language: node_js
 node_js:
   - "8"
 cache: yarn
-script: yarn build
+script:
+  - yarn lint
+  - yarn build

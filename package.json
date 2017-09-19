@@ -14,6 +14,11 @@
     "start": "PORT=3001 inferno-scripts start",
     "build": "inferno-scripts build",
     "test": "inferno-scripts test --env=jsdom",
+    "lint": "eslint src",
     "eject": "inferno-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.7.1",
+    "eslint-config-inferno-app": "^4.2.0"
   }
 }
