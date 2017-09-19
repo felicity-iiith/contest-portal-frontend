@@ -1,0 +1,17 @@
+{
+  "name": "contest-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "inferno": "^3.9.0",
+    "inferno-component": "^3.9.0",
+    "inferno-scripts": "4.2.0"
+  },
+  "proxy": "http://localhost:3000",
+  "scripts": {
+    "start": "PORT=3001 inferno-scripts start",
+    "build": "inferno-scripts build",
+    "test": "inferno-scripts test --env=jsdom",
+    "eject": "inferno-scripts eject"
+  }
+}
