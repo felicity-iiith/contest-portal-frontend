@@ -4,7 +4,7 @@ This was built with node and inferno (which is a lightweight react alternative)
 
 ## Installation
 
-- Enter the eforms/frontend/ directory.
+- Enter the directory.
 - Installing yarn package manager : https://yarnpkg.com/en/docs/install
 - We need node version greater than 6. If your distro does not provide that, you can use nvm to install it
 ```
@@ -23,7 +23,7 @@ yarn install
 This is the dev server which will auto refresh when you edit any file
 
 Open a new window in your Terminal.
-Enter the eforms/frontend/ directory.
+Enter the directory.
 ```
 yarn start
 ```

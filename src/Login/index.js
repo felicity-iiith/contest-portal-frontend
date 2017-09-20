@@ -23,7 +23,7 @@ class Login extends Component {
         <form onSubmit={this.onSubmit}>
           <fieldset>
             <label>Email</label>
-            <input type="email" value={email} onChange={this.onChange} name="eforms-email" />
+            <input type="email" value={email} onChange={this.onChange} name="email" />
           </fieldset>
           <button>Submit</button>
         </form>
