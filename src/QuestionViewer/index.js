@@ -21,10 +21,11 @@ class QuestionViewer extends Component {
       <div>
         {loading && <div>Loading...</div>}
         <h1>Q{question.qno}: {question.title}</h1>
+        {error && <div className="error">ERROR: {error}</div>}
         <p>
           {question.body}
         </p>
-        {error && <div className="error">ERROR: {error}</div>}
+        {/* XXX: Need to add previous and next buttons here. Use the Link component from 'inferno-router' */}
       </div>
     )
   }
