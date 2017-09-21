@@ -24,10 +24,9 @@ class QuestionViewer extends Component {
         <p>
           {question.body}
         </p>
-        {error && <div className="error">ERROR: {error}</div>}
+        {error && <div className="error">ERROR: {error}</div> }
       </div>
-    )
   }
+      )
 }
-
 export default QuestionViewer;
