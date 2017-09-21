@@ -1,5 +1,6 @@
 window.fetchWithAuth = (url, options = {}) => {
   url = url.startsWith('/') ? url : '/' + url;
+  url = url.startsWith('/api') ? url : '/api' + url;
   var body = options.body;
   if (body && typeof body.getAll !== 'function') { // is not formdata
     body = new FormData();
