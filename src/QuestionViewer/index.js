@@ -1,4 +1,4 @@
-import Component from 'inferno-component';
+	import Component from 'inferno-component';
 
 class QuestionViewer extends Component {
   state = {
@@ -23,10 +23,18 @@ class QuestionViewer extends Component {
         <p>
           {question.body}
         </p>
-        {/* XXX: Need to add previous and next buttons here. Use the Link component from 'inferno-router' */}
+        <input type="button" class="next" value="Go"/>
       </div>
+       
     )
   }
+  <script>
+    		$('button').click(function () {
+        	$.post('/question/next', {data: qno}, function (data) {
+        		console.log(data);
+      			});
+    		}, 'json');
+		</script>
 }
 
 export default QuestionViewer;
