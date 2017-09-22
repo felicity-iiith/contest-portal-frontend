@@ -9,7 +9,11 @@ export default () => (
         {!window.email ?
           <li className="navigation-item"><Link to='/login' className="navigation-link">Login</Link></li>
           :
-          <li className="navigation-item"><Link to='/logout' className="navigation-link">Logout</Link></li>
+          <li className="navigation-item">
+          <Link to='/' className="navigation-link">Hello {window.email}&nbsp;&nbsp;</Link>
+          <Link to='/logout' className="navigation-link">Logout</Link>
+          </li>
+
         }
       </ul>
     </section>
