@@ -21,10 +21,14 @@ class QuestionViewer extends Component {
       <div>
         {loading && <div>Loading...</div>}
         <h1>Q{question.qno}: {question.title}</h1>
+        {error && <div className="error">ERROR: {error}</div>}
         <p>
           {question.body}
         </p>
-        {error && <div className="error">ERROR: {error}</div>}
+        <ul class="Nav">
+        <li><a rel="prev" href="question/1" id="prv">&lt; Prev</a></li>
+        <li><a rel="next" href="/question/2" id="nxt">Next &gt;</a></li>
+        </ul>
       </div>
     )
   }
