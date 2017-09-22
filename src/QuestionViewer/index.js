@@ -23,18 +23,11 @@ class QuestionViewer extends Component {
         <p>
           {question.body}
         </p>
-        <input type="button" class="next" value="Go"/>
+        <input type="button" class="next" value="NEXT"/>&nbsp;<input type="button" class="prev" value="PREVIOUS"/>
       </div>
        
     )
   }
-  <script>
-    		$('button').click(function () {
-        	$.post('/question/next', {data: qno}, function (data) {
-        		console.log(data);
-      			});
-    		}, 'json');
-		</script>
 }
 
 export default QuestionViewer;
