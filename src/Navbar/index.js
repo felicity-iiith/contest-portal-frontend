@@ -5,17 +5,21 @@ export default () => (
   <nav className="navigation">
     <section className="container">
       <Link className="navigation-title" to="/"><h1 className="title">Contest Portal</h1></Link>
-      <ul className="navigation-list float-right">
-        {!window.email ?
+        {
+          !window.email ?
+          <ul className="navigation-list float-right">
           <li className="navigation-item"><Link to='/login' className="navigation-link">Login</Link></li>
+          </ul>
           :
-          <li className="navigation-item">
-          <Link to='/' className="navigation-link">Hello {window.email}&nbsp;&nbsp;</Link>
-          <Link to='/logout' className="navigation-link">Logout</Link>
-          </li>
-
+          <ul className="navigation-list float-right">
+            <li className="navigation-item">
+              <Link to='/' className="navigation-link">Hello {window.email}</Link>
+            </li>
+            <li className="navigation-item">
+              <Link to='/logout' className="navigation-link">Logout</Link>
+            </li>
+          </ul>
         }
-      </ul>
     </section>
   </nav>
 )
