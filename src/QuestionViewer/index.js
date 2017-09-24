@@ -1,6 +1,4 @@
-/* global fetchWithAuth */
-
-import Component from 'inferno-component';
+	import Component from 'inferno-component';
 
 class QuestionViewer extends Component {
   state = {
@@ -10,7 +8,7 @@ class QuestionViewer extends Component {
   }
   async componentDidMount() {
     const { qno } = this.props.params;
-    var res = await fetchWithAuth(`/questions/${qno}`);
+    var res = await window.fetchWithAuth(`/questions/${qno}`);
     res = await res.json();
     if (!res.error) this.setState({ question: res, loading: false })
     else this.setState({ error: res.error, loading: false })
@@ -25,8 +23,9 @@ class QuestionViewer extends Component {
         <p>
           {question.body}
         </p>
-        {/* XXX: Need to add previous and next buttons here. Use the Link component from 'inferno-router' */}
+        <input type="button" class="next" value="NEXT"/>&nbsp;<input type="button" class="prev" value="PREVIOUS"/>
       </div>
+       
     )
   }
 }
