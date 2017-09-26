@@ -1,4 +1,4 @@
-
+import { Link } from 'inferno-router';
 import Component from 'inferno-component';
 
 class QuestionViewer extends Component {
@@ -27,15 +27,15 @@ class QuestionViewer extends Component {
         </p>
         {
           qno!==1 &&
-            <a class="button float-left" href={`/question/${qno-1}`}>
+            <Link className="button float-left" to={`/question/${qno-1}`}>
               Prev
-            </a>
+            </Link>
         }
         {
           qno!==5 &&
-            <a class="button float-right" href={`/question/${qno+1}`}>
+            <Link className="button float-right" to={`/question/${qno+1}`}>
               Next
-            </a>
+            </Link>
         }
       </div>
     )
