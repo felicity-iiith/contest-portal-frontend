@@ -16,9 +16,7 @@ class QuestionViewer extends Component {
   }
   render() {
     const { loading, question, error } = this.state
-    const quesno = parseInt(this.props.params.qno,10)
-    const prev = `/question/${quesno-1}`
-    const nxt = `/question/${quesno+1}`
+    const qno = parseInt(this.props.params.qno,10)
     return (
       <div>
         {loading && <div>Loading...</div>}
@@ -28,15 +26,16 @@ class QuestionViewer extends Component {
           {question.body}
         </p>
         {
-          quesno ===1 ?(
-            <a class="button float-right" href={nxt}>Next</a>
-          ) : quesno ===5 ?(
-            <a class="button float-left" href={prev}>Prev</a>
-          )
-            :
-            (<div>
-              <a class="button float-left" href={prev}>Prev</a>
-              <a class="button float-right" href={nxt}>Next</a></div>)
+          qno!==1 &&
+            <a class="button float-left" href={`/question/${qno-1}`}>
+              Prev
+            </a>
+        }
+        {
+          qno!==5 &&
+            <a class="button float-right" href={`/question/${qno+1}`}>
+              Next
+            </a>
         }
       </div>
     )
