@@ -19,17 +19,14 @@ class QuestionsList extends Component {
     const { loading, questions, error } = this.state
     return (
       <div>
-        {!window.email ?
-          <ul></ul>
-          :
-          <ul className="navigation-title " to="/"><h3 className="float-right">Hello {window.email}</h3></ul>
-        }
         <h1>Questions</h1>
+        This shall update when issue #2 is fixed in the backend.
+        Till then go <Link to={`/question/1/`}>here</Link> (the qno in the URL goes from 1 to 5)
         {loading && <div>Loading...</div>}
         <ul>
           {questions.map(question => (
             <li>
-              <Link to={`/questions/${question.id}/${question.uuid}`}>{question.title}</Link>
+              <Link to={`/question/${question.id}/`}>{question.title}</Link>
             </li>))}
         </ul>
         {error && <div className="error">ERROR: {error}</div>}
