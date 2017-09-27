@@ -8,7 +8,12 @@ class QuestionViewer extends Component {
     error: '',
   }
   async componentDidMount() {
-    const { qno } = this.props.params;
+    await this.fetchQuestion()
+  }
+  async componentWillReceiveProps(nextProps) {
+    await this.fetchQuestion(nextProps.params.qno)
+  }
+  async fetchQuestion(qno = this.props.params.qno) {
     var res = await window.fetchWithAuth(`/questions/${qno}`);
     res = await res.json();
     if (!res.error) this.setState({ question: res, loading: false })
