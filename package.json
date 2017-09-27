@@ -7,6 +7,7 @@
     "inferno-component": "^3.9.0",
     "inferno-router": "^3.9.0",
     "inferno-scripts": "4.2.0",
+    "linkstate": "^1.1.0",
     "milligram": "^1.3.0"
   },
   "proxy": "http://localhost:3000",

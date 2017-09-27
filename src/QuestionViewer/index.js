@@ -1,4 +1,5 @@
 import { Link } from 'inferno-router';
+import linkState from 'linkstate';
 import Component from 'inferno-component';
 
 class QuestionViewer extends Component {
@@ -19,8 +20,13 @@ class QuestionViewer extends Component {
     if (!res.error) this.setState({ question: res, loading: false })
     else this.setState({ error: res.error, loading: false })
   }
+  async checkAnswer() {
+    // XXX: Need to fill in this stub
+    // Read fetch documentation on how to send post request and
+    // display output in window.alert
+  }
   render() {
-    const { loading, question, error } = this.state
+    const { loading, question, error, answer } = this.state
     const qno = parseInt(this.props.params.qno,10)
     return (
       <div>
@@ -30,6 +36,12 @@ class QuestionViewer extends Component {
         <p>
           {question.body}
         </p>
+        <form onSubmit={this.checkAnswer}>
+          <label for='answer'>Answer</label>
+          <input type='text' name='answer' value={answer} onInput={linkState(this, 'answer')} />
+          <button class='button-primary float-right'>Check</button>
+        </form>
+        <div class="clearfix" />
         {
           qno!==1 &&
             <Link className="button float-left" to={`/question/${qno-1}`}>
