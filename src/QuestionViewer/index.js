@@ -3,14 +3,9 @@ import linkState from 'linkstate';
 import Component from 'inferno-component';
 var Remarkable = require('remarkable');
 var md = new Remarkable({
-  html:         true,      
-  xhtmlOut:     false,     
-  breaks:       false,      
-  langPrefix:   'language-', 
-  linkify:      false,    
-  typographer:  false,
-  quotes: '“”‘’',
-  highlight: function (/*str, lang*/) { return ''; }
+  html:         true,
+  linkify:      true,
+  typographer:  true,
 });
 
 class QuestionViewer extends Component {
