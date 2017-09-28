@@ -1,6 +1,7 @@
 import { Link } from 'inferno-router';
 import linkState from 'linkstate';
 import Component from 'inferno-component';
+
 var Remarkable = require('remarkable');
 var md = new Remarkable({
   html:         true,
@@ -26,7 +27,14 @@ class QuestionViewer extends Component {
     if (!res.error) this.setState({ question: res, loading: false })
     else this.setState({ error: res.error, loading: false })
   }
-  async checkAnswer() {
+  checkAnswer = e => {
+    e.preventDefault();
+    const answer = e.target[0].value
+    const qno = this.props.params.qno
+    window.alert(answer) //answer given by user
+    window.alert(qno) // question num
+    console.log(`/api/questions/${qno}/answer`) //url for post request 
+
     // XXX: Need to fill in this stub
     // Read fetch documentation on how to send post request and
     // display output in window.alert
