@@ -8,7 +8,10 @@
     "inferno-router": "^3.9.0",
     "inferno-scripts": "4.2.0",
     "linkstate": "^1.1.0",
-    "milligram": "^1.3.0"
+    "milligram": "^1.3.0",
+    "react": "^16.0.0",
+    "remarkable": "^1.7.1",
+    "remarkable-react": "^1.0.1"
   },
   "proxy": "http://localhost:3000",
   "scripts": {

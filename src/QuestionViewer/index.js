@@ -1,6 +1,17 @@
 import { Link } from 'inferno-router';
 import linkState from 'linkstate';
 import Component from 'inferno-component';
+var Remarkable = require('remarkable');
+var md = new Remarkable({
+  html:         true,      
+  xhtmlOut:     false,     
+  breaks:       false,      
+  langPrefix:   'language-', 
+  linkify:      false,    
+  typographer:  false,
+  quotes: '“”‘’',
+  highlight: function (/*str, lang*/) { return ''; }
+});
 
 class QuestionViewer extends Component {
   state = {
@@ -25,6 +36,7 @@ class QuestionViewer extends Component {
     // Read fetch documentation on how to send post request and
     // display output in window.alert
   }
+
   render() {
     const { loading, question, error, answer } = this.state
     const qno = parseInt(this.props.params.qno,10)
@@ -34,7 +46,7 @@ class QuestionViewer extends Component {
         <h1>Q{question.qno}: {question.title}</h1>
         {error && <div className="error">ERROR: {error}</div>}
         <p>
-          {question.body}
+        <div dangerouslySetInnerHTML={{__html: md.render(`${question.body}`)}} />
         </p>
         <form onSubmit={this.checkAnswer}>
           <label for='answer'>Answer</label>
