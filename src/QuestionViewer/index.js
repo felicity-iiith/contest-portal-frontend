@@ -46,7 +46,7 @@ class QuestionViewer extends Component {
         <h1>Q{question.qno}: {question.title}</h1>
         {error && <div className="error">ERROR: {error}</div>}
         <p>
-        <div dangerouslySetInnerHTML={{__html: md.render(`${question.body}`)}} />
+          <div dangerouslySetInnerHTML={{__html: md.render(`${question.body}`)}} />
         </p>
         <form onSubmit={this.checkAnswer}>
           <label for='answer'>Answer</label>
