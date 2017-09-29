@@ -11,6 +11,7 @@ import Login from './Login';
 import Logout from './Logout';
 import QuestionsList from './QuestionsList';
 import QuestionViewer from './QuestionViewer';
+import Scoreboard from './Scoreboard';
 
 const browserHistory = createBrowserHistory();
 window.browserHistory = browserHistory;
@@ -23,6 +24,7 @@ const routes = (
       <IndexRoute component={QuestionsList}/>
       <Route path="/question/:qno" component={QuestionViewer} />
       <Route path="/login" component={Login} />
+      <Route path="/scoreboard" component={Scoreboard} />
       <Route path="/logout" component={Logout} />
     </Route>
   </Router>
