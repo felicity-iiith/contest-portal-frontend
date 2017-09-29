@@ -19,11 +19,11 @@ class Scoreboard extends Component {
             <td> Name </td> 
             <td> Score </td>
           </th>
-            {scores.map(user => (
-              <tr>
-                <td> {user.name} </td>
-                <td> {user.score} </td>  
-              </tr>))}
+          {scores.map(user => (
+            <tr>
+              <td> {user.name} </td>
+              <td> {user.score} </td>  
+            </tr>))}
         </table>
         {error && <div className="error">ERROR: {error}</div>}
       </div>
