@@ -20,8 +20,6 @@ class QuestionsList extends Component {
     return (
       <div>
         <h1>Questions</h1>
-        This shall update when issue #2 is fixed in the backend.
-        Till then go <Link to={`/question/1/`}>here</Link> (the qno in the URL goes from 1 to 5)
         {loading && <div>Loading...</div>}
         <ul>
           {questions.map(question => (
