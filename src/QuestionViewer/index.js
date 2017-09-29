@@ -33,8 +33,16 @@ class QuestionViewer extends Component {
     const qno = this.props.params.qno
     window.alert(answer) //answer given by user
     window.alert(qno) // question num
-    console.log(`/api/questions/${qno}/answer`) //url for post request 
-
+    console.log(window.email)
+    console.log(`http://localhost:3000/api/questions/${qno}`) //url for post request 
+    fetch(`http://localhost:3000/api/questions/${qno}`,
+      {
+        method: 'GET',
+        mode: 'no-cors',
+        headers: {
+          'email' : 'user1@gmail.com',
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+      })  
     // XXX: Need to fill in this stub
     // Read fetch documentation on how to send post request and
     // display output in window.alert
