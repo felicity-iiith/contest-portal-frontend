@@ -12,6 +12,7 @@ export default () => (
         :
         <ul className="navigation-list float-right">
           <li className="navigation-item navigation-link"> Hello {window.email} </li>
+          <li className="navigation-item"><Link to='/scoreboard' className="navigation-link">Scoreboard</Link></li>
           <li className="navigation-item"><Link to='/logout' className="navigation-link">Logout</Link></li>
         </ul>
       }
