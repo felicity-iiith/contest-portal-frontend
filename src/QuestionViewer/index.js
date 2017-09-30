@@ -32,27 +32,8 @@ class QuestionViewer extends Component {
     const answer = e.target[0].value
     const qno = this.props.params.qno
     window.alert(answer) //answer given by user
+    window.fetchWithAuth(`/questions/${qno}/answer`,{'body': {'answer':answer}, 'method' : 'POST' });
     window.alert(qno) // question num
-    console.log(window.email)
-    console.log(`http://localhost:3000/api/questions/${qno}/answer`) //url for post request 
-    fetch(`http://localhost:3000/api/questions/${qno}/answer`,
-      {
-        method: 'POST',
-        credentials: 'include',
-        mode: 'no-cors',
-        headers: {
-          'email' : window.email,
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
-        body: {
-          "answer" : answer
-        }
-      }).then(function(response){
-      console.log(response)
-      return response.text();
-    });
-    // XXX: Need to fill in this stub
-    // Read fetch documentation on how to send post request and
-    // display output in window.alert
   }
 
   render() {

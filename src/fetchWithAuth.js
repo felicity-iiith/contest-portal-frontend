@@ -13,7 +13,9 @@ window.fetchWithAuth = (url, options = {}) => {
     body,
     headers: {
       ...options.headers,
-      email: window.email
+      email: window.email,
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+
     }
   })
 }
